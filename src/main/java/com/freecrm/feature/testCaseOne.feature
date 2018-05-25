@@ -13,3 +13,7 @@ Scenario: Validate login functionality works
 	When I enter username and password
 	And I click Login button
 	Then I should see logout link
+	And I click the contact in the menu
+	And I enter first name
+	And I enter last name
+	And I click save button

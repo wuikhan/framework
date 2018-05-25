@@ -29,7 +29,6 @@ public void i_go_to_free_crm_link() {
 public void i_see_crm_logo()  {
 	loginPageTest = new loginPage();
 	loginPageTest.validateCRMLogo();
-	
 }
 
 @When("^I see forgot password link$")
@@ -40,7 +39,8 @@ public void i_see_forgot_password_link()  {
 
 @When("^I see features link$")
 public void i_see_features_link()  {
-    
+   boolean featureLink = loginPageTest.validateFeaturesLink();
+   Assert.assertTrue(featureLink);
 }
 
 @When("^I see Signup link$")
@@ -80,5 +80,30 @@ public void i_click_Login_button() {
 public void i_should_see_logout_link()  {
     
 }
+
+
+@Then("^I click the contact in the menu$")
+public void i_click_the_contact_in_the_menu() {
+	homePage= new HomePage();
+    homePage.clickOnNewContactLink();
+}
+
+@Then("^I enter first name$")
+public void i_enter_first_name()  {
+  
+}
+
+@Then("^I enter last name$")
+public void i_enter_last_name()  {
+    
+}
+
+@Then("^I click save button$")
+public void i_click_save_button()  {
+    
+}
+
+
+
 
 }
