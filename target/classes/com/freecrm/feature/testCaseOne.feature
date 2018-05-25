@@ -4,7 +4,7 @@ Scenario: Validate login functionality works
 	Given I open a browser
 	When I go to free crm link
 	And I see crm logo
-	And I see forgot password link
+	And I see forgot password link	
 	And I see features link
 	And I see Signup link
 	And I see Pricing link

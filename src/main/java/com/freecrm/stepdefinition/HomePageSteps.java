@@ -1,22 +1,20 @@
 package com.freecrm.stepdefinition;
 
 import org.junit.Assert;
-import org.openqa.selenium.support.PageFactory;
 
 import com.freecrm.pages.HomePage;
 import com.freecrm.pages.loginPage;
 import com.freecrm.utilities.BaseProject;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class HomePageSteps extends BaseProject {
-	loginPage loginPageTest = new loginPage(); 
+	
+	loginPage loginPageTest;
 	HomePage homePage ;
 	
-
 @Given("^I open a browser$")
 public void i_open_a_browser()  {
 	BaseProject.initialize();
@@ -29,14 +27,15 @@ public void i_go_to_free_crm_link() {
 
 @When("^I see crm logo$")
 public void i_see_crm_logo()  {
+	loginPageTest = new loginPage();
+	loginPageTest.validateCRMLogo();
 	
-	
- 
 }
 
 @When("^I see forgot password link$")
 public void i_see_forgot_password_link()  {
-    
+	boolean fgtLink = loginPageTest.validateForgotPasswordLink();
+    Assert.assertTrue(fgtLink);
 }
 
 @When("^I see features link$")
@@ -65,9 +64,10 @@ public void i_see_Contact_link()  {
 }
 
 @When("^I enter username and password$")
-public void i_enter_username_and_password() {
-	homePage = loginPageTest.login(prop.getProperty("username"), prop.getProperty("password"));
-    
+public void i_enter_username_and_password() throws InterruptedException {
+	 
+	loginPageTest.login(prop.getProperty("username"), prop.getProperty("password"));
+	Thread.sleep(3000);
 }
 
 @When("^I click Login button$")

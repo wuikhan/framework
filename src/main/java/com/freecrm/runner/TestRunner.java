@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 										glue= {"com.freecrm.stepdefinition"},
 										monochrome=true,
 										strict=true,
-										dryRun=true)
+										dryRun=false)
 public class TestRunner {
 
 }
