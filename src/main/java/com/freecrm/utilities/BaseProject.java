@@ -40,8 +40,6 @@ public class BaseProject {
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		
-		
 	}
 	
 }

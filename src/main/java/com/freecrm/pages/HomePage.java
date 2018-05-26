@@ -12,16 +12,31 @@ public class HomePage extends BaseProject {
 	@FindBy(xpath = "//a[contains(text(),'Deals')]") WebElement dealsLink;
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]") WebElement contactsLink;
 	@FindBy(xpath = "//a[@title='New Contact']") WebElement newContactLink;
+	@FindBy(id = "first_name") WebElement firstName;
+	@FindBy(xpath = "//input[@id='surname']") WebElement lastName;
+	@FindBy(xpath = "//input[@value='Save']") WebElement saveButton;
 
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickOnNewContactLink() {
+	public void clickOnNewContactLink() throws InterruptedException {
 		Actions action = new Actions(driver);
 		driver.switchTo().frame("mainpanel");
 		action.moveToElement(driver.findElement(By.xpath("html/body/table[1]/tbody/tr[3]/td[1]/div/div/ul/li[4]/a"))).build().perform();
 		driver.findElement(By.xpath("//a[@title='New Contact']")).click();
+		
+	}
+	
+	public void firstName() {
+		 firstName.sendKeys("wuikhan");
+	}
+	public void lastName() {
+		lastName.sendKeys("Khan");
+	}
+	
+	public void clickSave() {
+		saveButton.click();
 	}
 	
 	

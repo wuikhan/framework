@@ -83,27 +83,32 @@ public void i_should_see_logout_link()  {
 
 
 @Then("^I click the contact in the menu$")
-public void i_click_the_contact_in_the_menu() {
+public void i_click_the_contact_in_the_menu() throws InterruptedException {
 	homePage= new HomePage();
     homePage.clickOnNewContactLink();
 }
 
 @Then("^I enter first name$")
 public void i_enter_first_name()  {
+	
+	homePage.firstName();
   
 }
 
 @Then("^I enter last name$")
 public void i_enter_last_name()  {
-    
+    homePage.lastName();
 }
 
 @Then("^I click save button$")
 public void i_click_save_button()  {
-    
+    homePage.clickSave();
 }
 
-
+@Then("^I wait three seconds$")
+public void i_wait_three_seconds() throws InterruptedException  {
+    Thread.sleep(3000);
+}
 
 
 }
