@@ -1,11 +1,13 @@
 package com.freecrm.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import com.freecrm.utilities.BaseProject;
+
+
 
 public class loginPage extends BaseProject {
 	
@@ -20,7 +22,6 @@ public class loginPage extends BaseProject {
 	@FindBy(xpath = "//input[@name='username']") WebElement usernameField;
 	@FindBy(xpath = "//input[@name='password']") WebElement passwordField;
 	@FindBy(xpath = "//input[@value='Login']") WebElement loginLink;
-	
 	
 	//initialize the Page Object
 	public loginPage() {

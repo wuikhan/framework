@@ -1,6 +1,7 @@
 package com.freecrm.stepdefinition;
 
 import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
 
 import com.freecrm.pages.HomePage;
 import com.freecrm.pages.loginPage;
@@ -10,10 +11,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HomePageSteps extends BaseProject {
+public class HomePageSteps  extends BaseProject {
+	
 	
 	loginPage loginPageTest;
 	HomePage homePage ;
+	
 	
 @Given("^I open a browser$")
 public void i_open_a_browser()  {

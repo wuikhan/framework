@@ -8,7 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.freecrm.utilities.BaseProject;
 
+
+
+
 public class HomePage extends BaseProject {
+	
 	@FindBy(xpath = "//a[contains(text(),'Deals')]") WebElement dealsLink;
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]") WebElement contactsLink;
 	@FindBy(xpath = "//a[@title='New Contact']") WebElement newContactLink;
@@ -19,9 +23,9 @@ public class HomePage extends BaseProject {
 	@FindBy(xpath = "//input[@id='company_position']") WebElement Position;
 	@FindBy(xpath = "//input[@id='department']") WebElement Department;
 
-	public HomePage() {
-		PageFactory.initElements(driver, this);
-	}
+public HomePage () {
+	PageFactory.initElements(driver, this);
+}
 	
 	public void clickOnNewContactLink() throws InterruptedException {
 		Actions action = new Actions(driver);
@@ -52,8 +56,5 @@ public class HomePage extends BaseProject {
 	public void Department() {
 		Department.sendKeys("IT");
 	}
-	
-	
-	
 	
 }
