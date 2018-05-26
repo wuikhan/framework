@@ -64,16 +64,14 @@ public void i_see_Contact_link()  {
 }
 
 @When("^I enter username and password$")
-public void i_enter_username_and_password() throws InterruptedException {
-	 
+public void i_enter_username_and_password() throws InterruptedException { 
 	loginPageTest.login(prop.getProperty("username"), prop.getProperty("password"));
 	Thread.sleep(3000);
 }
 
 @When("^I click Login button$")
 public void i_click_Login_button() {
-	loginPageTest.clickLink();
-    
+	loginPageTest.clickLink();   
 }
 
 @Then("^I should see logout link$")
@@ -109,6 +107,24 @@ public void i_click_save_button()  {
 public void i_wait_three_seconds() throws InterruptedException  {
     Thread.sleep(3000);
 }
+
+@Then("^I enter nick name$")
+public void i_enter_nick_name()  {
+    
+}
+
+@Then("^I enter position$")
+public void i_enter_position() {
+	homePage.Position();
+    
+}
+
+@Then("^I enter department$")
+public void i_enter_department()  {
+    homePage.Department();
+}
+
+
 
 
 }

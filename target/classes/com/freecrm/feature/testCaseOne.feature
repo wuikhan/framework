@@ -17,4 +17,8 @@ Scenario: Validate login functionality works
 	And I wait three seconds
 	And I enter first name
 	And I enter last name
+	And I enter nick name
+	And I enter position
+	And I enter department
 	And I click save button
+

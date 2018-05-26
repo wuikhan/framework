@@ -15,6 +15,9 @@ public class HomePage extends BaseProject {
 	@FindBy(id = "first_name") WebElement firstName;
 	@FindBy(xpath = "//input[@id='surname']") WebElement lastName;
 	@FindBy(xpath = "//input[@value='Save']") WebElement saveButton;
+	@FindBy(xpath = "//input[@name='nickname']") WebElement nickName;
+	@FindBy(xpath = "//input[@id='company_position']") WebElement Position;
+	@FindBy(xpath = "//input[@id='department']") WebElement Department;
 
 	public HomePage() {
 		PageFactory.initElements(driver, this);
@@ -25,7 +28,6 @@ public class HomePage extends BaseProject {
 		driver.switchTo().frame("mainpanel");
 		action.moveToElement(driver.findElement(By.xpath("html/body/table[1]/tbody/tr[3]/td[1]/div/div/ul/li[4]/a"))).build().perform();
 		driver.findElement(By.xpath("//a[@title='New Contact']")).click();
-		
 	}
 	
 	public void firstName() {
@@ -38,6 +40,20 @@ public class HomePage extends BaseProject {
 	public void clickSave() {
 		saveButton.click();
 	}
+	
+	public void nickName () {
+		nickName.sendKeys("Waqas");
+	}
+	
+	public void Position() {
+		Position.sendKeys("QA");
+	}
+	
+	public void Department() {
+		Department.sendKeys("IT");
+	}
+	
+	
 	
 	
 }
